@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    < charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arise and Shine International College</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        schoolRed: '#E11D48',
+                        schoolYellow: '#FACC15',
+                        schoolGreen: '#10B981',
+                        schoolBlack: '#0F172A',
+                        schoolWhite: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(225, 29, 72, 0.15), transparent),
+                        radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.1), transparent),
+                        #0F172A;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #FACC15, #E11D48);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-schoolWhite font-body text-schoolBlack overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-xl overflow-hidden shadow-lg border-2 border-schoolYellow">
+                        <img src='https://opal.google/board/blobs/320e5adb-73d6-4e37-b8d8-7639bedb94ca' alt='ARISE AND SHINE Logo' class="w-full h-full object-cover" />
+                    </div>
+                    <div>
+                        <span class="block text-sm font-bold tracking-tighter text-schoolBlack leading-tight">ARISE AND SHINE</span>
+                        <span class="block text-[10px] font-semibold text-schoolRed tracking-[0.2em] uppercase">International College</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-sm font-semibold hover:text-schoolRed transition-colors">About</a>
+                    <a href="#academics" class="text-sm font-semibold hover:text-schoolRed transition-colors">Academics</a>
+                    <a href="#activities" class="text-sm font-semibold hover:text-schoolRed transition-colors">Activities</a>
+                    <a href="#gallery" class="text-sm font-semibold hover:text-schoolRed transition-colors">Gallery</a>
+                    <a href="#contact" class="px-5 py-2.5 bg-schoolBlack text-white rounded-full text-sm font-bold hover:bg-schoolRed transition-all shadow-lg hover:shadow-schoolRed/20">Contact Us</a>
+                </div>
+
+                <button class="md:hidden text-schoolBlack" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 p-4 space-y-4">
+            <a href="#about" class="block text-lg font-semibold">About</a>
+            <a href="#academics" class="block text-lg font-semibold">Academics</a>
+            <a href="#activities" class="block text-lg font-semibold">Activities</a>
+            <a href="#gallery" class="block text-lg font-semibold">Gallery</a>
+            <a href="#contact" class="block py-3 bg-schoolBlack text-white text-center rounded-xl font-bold">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 hero-gradient overflow-hidden">
+        <div class="absolute inset-0 opacity-20 pointer-events-none">
+            <div class="absolute top-20 left-10 w-64 h-64 bg-schoolRed rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-schoolYellow rounded-full blur-[150px]"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/20 text-white text-xs font-bold uppercase tracking-widest mb-8 animate-fade-in-up">
+                <span class="w-2 h-2 rounded-full bg-schoolYellow"></span>
+                Now Enrolling for Next Term
+            </div>
+            <h1 class="text-5xl md:text-8xl font-display font-extrabold text-white mb-6 leading-none animate-fade-in-up" style="animation-delay: 0.2s">
+                ARISE WITH <br/><span class="text-gradient">KNOWLEDGE</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-10 font-light animate-fade-in-up" style="animation-delay: 0.4s">
+                Shine with excellence at Zimbabwe's premier hub for academic distinction and holistic character development.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up" style="animation-delay: 0.6s">
+                <a href="#academics" class="px-10 py-5 bg-schoolRed text-white rounded-2xl font-bold text-lg hover:scale-105 transition-all shadow-2xl shadow-schoolRed/30">Explore Programs</a>
+                <a href="#about" class="px-10 py-5 glass text-white rounded-2xl font-bold text-lg hover:bg-white/10 transition-all">Our Mission</a>
+            </div>
+        </div>
+
+        <!-- Floating Decorative Elements -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section (Mission & Values) -->
+    <section id="about" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-schoolRed font-bold uppercase tracking-widest text-sm mb-4">About the College</h2>
+                    <h3 class="text-4xl md:text-5xl font-display font-extrabold mb-6 leading-tight">Nurturing Leaders of <span class="text-schoolYellow underline decoration-schoolGreen">Tomorrow</span></h3>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        Arise and Shine International College is committed to providing an environment where academic rigor meets creative exploration. We believe every student has a unique light that, when nurtured correctly, can illuminate the world.
+                    </p>
+                    <div class="flex items-center gap-4 p-6 rounded-3xl bg-gray-50 border-l-4 border-schoolRed">
+                        <div class="text-3xl font-bold text-schoolRed">“</div>
+                        <p class="italic text-gray-700 font-medium">
+                            Our mission is to empower learners through innovative education, character building, and a global perspective.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="p-8 rounded-3xl bg-schoolBlack text-white shadow-2xl transition-transform hover:-translate-y-2">
+                        <div class="w-12 h-12 bg-schoolRed rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.674a1 1 0 00.922-.606l7-15A1 1 0 0021.337 1H2.663a1 1 0 00-.922 1.394l7 15a1 1 0 00.922.606zM7 23l3-3 3 3m-3-3v8"></path></svg>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Excellence</h4>
+                        <p class="text-gray-400 text-sm">Striving for the highest standards in everything we do.</p>
+                    </div>
+                    <div class="p-8 rounded-3xl bg-white border border-gray-100 shadow-xl transition-transform hover:-translate-y-2">
+                        <div class="w-12 h-12 bg-schoolGreen rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Integrity</h4>
+                        <p class="text-gray-500 text-sm">Building character through honesty and moral principles.</p>
+                    </div>
+                    <div class="p-8 rounded-3xl bg-white border border-gray-100 shadow-xl transition-transform hover:-translate-y-2">
+                        <div class="w-12 h-12 bg-schoolYellow rounded-xl flex items-center justify-center mb-6 text-schoolBlack">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Global Mindset</h4>
+                        <p class="text-gray-500 text-sm">Preparing students for a connected, international world.</p>
+                    </div>
+                    <div class="p-8 rounded-3xl bg-schoolRed text-white shadow-2xl transition-transform hover:-translate-y-2">
+                        <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 text-schoolRed">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Innovation</h4>
+                        <p class="text-white/80 text-sm">Embracing new ideas and creative problem solving.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Programs -->
+    <section id="academics" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-extrabold mb-4">Academic Programs</h2>
+                <div class="h-1.5 w-24 bg-schoolRed mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div class="group bg-white p-2 rounded-[2rem] shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden border border-transparent hover:border-schoolRed/10">
+                    <div class="aspect-video bg-schoolBlack rounded-[1.5rem] mb-6 flex items-center justify-center overflow-hidden">
+                        <div class="text-white/20 group-hover:scale-110 transition-transform duration-700">
+                             <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-8">
+                        <h4 class="text-2xl font-bold mb-3 group-hover:text-schoolRed transition-colors">Cambridge IGCSE</h4>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">Providing a globally recognized qualification that builds deep understanding and critical thinking skills across core subjects.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center gap-2 text-xs font-bold text-gray-500"><span class="w-1.5 h-1.5 bg-schoolGreen rounded-full"></span> STEM Excellence</li>
+                            <li class="flex items-center gap-2 text-xs font-bold text-gray-500"><span class="w-1.5 h-1.5 bg-schoolGreen rounded-full"></span> Global Perspectives</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Program 2 -->
+                <div class="group bg-white p-2 rounded-[2rem] shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden border border-transparent hover:border-schoolYellow/10">
+                    <div class="aspect-video bg-schoolYellow rounded-[1.5rem] mb-6 flex items-center justify-center overflow-hidden">
+                         <div class="text-schoolBlack/20 group-hover:scale-110 transition-transform duration-700">
+                            <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path></svg>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-8">
+                        <h4 class="text-2xl font-bold mb-3 group-hover:text-schoolYellow transition-colors">A-Level Distinction</h4>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">Advanced level studies tailored for university entry, focusing on specialization and academic mastery in chosen disciplines.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center gap-2 text-xs font-bold text-gray-500"><span class="w-1.5 h-1.5 bg-schoolRed rounded-full"></span> University Preparation</li>
+                            <li class="flex items-center gap-2 text-xs font-bold text-gray-500"><span class="w-1.5 h-1.5 bg-schoolRed rounded-full"></span> Specialized Tutoring</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="group bg-white p-2 rounded-[2rem] shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden border border-transparent hover:border-schoolGreen/10">
+                    <div class="aspect-video bg-schoolGreen rounded-[1.5rem] mb-6 flex items-center justify-center overflow-hidden">
+                        <div class="text-white/20 group-hover:scale-110 transition-transform duration-700">
+                            <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-8">
+                        <h4 class="text-2xl font-bold mb-3 group-hover:text-schoolGreen transition-colors">Creative Arts & IT</h4>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">Fostering digital literacy and creative expression through modern technology and comprehensive arts curricula.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center gap-2 text-xs font-bold text-gray-500"><span class="w-1.5 h-1.5 bg-schoolYellow rounded-full"></span> Modern Lab Facilities</li>
+                            <li class="flex items-center gap-2 text-xs font-bold text-gray-500"><span class="w-1.5 h-1.5 bg-schoolYellow rounded-full"></span> Creative Portfolios</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Extracurricular Activities -->
+    <section id="activities" class="py-24 bg-schoolBlack text-white overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-schoolRed/5 -skew-x-12 translate-x-1/2"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <h2 class="text-schoolYellow font-bold uppercase tracking-widest text-sm mb-4">Life Beyond Books</h2>
+                    <h3 class="text-4xl md:text-5xl font-display font-extrabold">Extracurricular Activities</h3>
+                </div>
+                <p class="text-gray-400 max-w-md">Discovery doesn't stop in the classroom. We offer a vibrant range of activities to build teamwork, confidence, and passion.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="p-8 rounded-3xl glass hover:bg-white/10 transition-all group">
+                    <div class="text-4xl mb-6 group-hover:scale-125 transition-transform duration-300">⚽</div>
+                    <h5 class="text-lg font-bold mb-2">Sports Excellence</h5>
+                    <p class="text-gray-400 text-xs uppercase tracking-widest">Football, Basketball, Athletics</p>
+                </div>
+                <div class="p-8 rounded-3xl glass hover:bg-white/10 transition-all group">
+                    <div class="text-4xl mb-6 group-hover:scale-125 transition-transform duration-300">🎭</div>
+                    <h5 class="text-lg font-bold mb-2">Drama & Arts</h5>
+                    <p class="text-gray-400 text-xs uppercase tracking-widest">Theatre, Fine Arts, Music</p>
+                </div>
+                <div class="p-8 rounded-3xl glass hover:bg-white/10 transition-all group">
+                    <div class="text-4xl mb-6 group-hover:scale-125 transition-transform duration-300">♟️</div>
+                    <h5 class="text-lg font-bold mb-2">Chess & Clubs</h5>
+                    <p class="text-gray-400 text-xs uppercase tracking-widest">Strategic Thinking, Debate</p>
+                </div>
+                <div class="p-8 rounded-3xl glass hover:bg-white/10 transition-all group">
+                    <div class="text-4xl mb-6 group-hover:scale-125 transition-transform duration-300">🌍</div>
+                    <h5 class="text-lg font-bold mb-2">Community Service</h5>
+                    <p class="text-gray-400 text-xs uppercase tracking-widest">Outreach, Leadership</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-extrabold mb-4">Captured Moments</h2>
+                <p class="text-gray-500">A glimpse into daily life at Arise and Shine</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[250px]">
+                <div class="md:col-span-2 md:row-span-2 rounded-[2.5rem] overflow-hidden shadow-2xl relative group">
+                    <img src='https://opal.google/board/blobs/ce435251-8ff3-4e77-89df-13437d1327f6' alt='Gallery 1' class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-schoolBlack/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+                        <span class="text-white font-bold text-xl">Campus Facilities</span>
+                    </div>
+                </div>
+                <div class="rounded-[2.5rem] overflow-hidden shadow-xl relative group">
+                    <img src='https://opal.google/board/blobs/b3d3577e-0d17-4974-98de-4308584c181a' alt='Gallery 2' class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                </div>
+                <div class="rounded-[2.5rem] overflow-hidden shadow-xl relative group">
+                    <img src='https://opal.google/board/blobs/47e933b5-6e8f-4d2b-a47e-286784978f5b' alt='Gallery 3' class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                </div>
+                <div class="md:col-span-2 rounded-[2.5rem] overflow-hidden shadow-xl relative group">
+                    <img src='https://opal.google/board/blobs/cc42cdd8-5a1b-4566-851d-adf0a5464a00' alt='Gallery 4' class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-schoolBlack/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+                        <span class="text-white font-bold text-lg">Academic Rigor</span>
+                    </div>
+                </div>
+                <div class="md:col-span-4 rounded-[2.5rem] overflow-hidden shadow-xl relative group h-[200px] md:h-auto">
+                    <img src='https://opal.google/board/blobs/c58afb3c-8f40-447f-bc29-b624ba9b6157' alt='Gallery 5' class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-schoolRed relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 C 20 0 50 0 100 100" fill="white"></path>
+            </svg>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 class="text-white font-bold uppercase tracking-widest text-sm mb-12 text-center">Voices of Success</h2>
+            
+            <div class="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory gap-8 pb-8">
+                <div class="snap-center shrink-0 w-[300px] md:w-[450px] bg-white p-10 rounded-[3rem] shadow-2xl">
+                    <div class="text-schoolYellow text-4xl mb-6">★★★★★</div>
+                    <p class="text-gray-700 text-lg italic mb-8">"The transformation in my child's confidence and academic performance has been remarkable since joining Arise and Shine."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full"></div>
+                        <div>
+                            <h6 class="font-bold">Mrs. Chipo M.</h6>
+                            <p class="text-xs text-gray-500 uppercase font-bold">Parent</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="snap-center shrink-0 w-[300px] md:w-[450px] bg-schoolBlack text-white p-10 rounded-[3rem] shadow-2xl">
+                    <div class="text-schoolYellow text-4xl mb-6">★★★★★</div>
+                    <p class="text-gray-300 text-lg italic mb-8">"Arise and Shine provided the perfect bridge for my university studies abroad. The Cambridge curriculum is handled brilliantly here."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gray-700 rounded-full"></div>
+                        <div>
+                            <h6 class="font-bold">Blessing T.</h6>
+                            <p class="text-xs text-gray-400 uppercase font-bold">Alumni, Class of 2022</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="snap-center shrink-0 w-[300px] md:w-[450px] bg-white p-10 rounded-[3rem] shadow-2xl">
+                    <div class="text-schoolYellow text-4xl mb-6">★★★★★</div>
+                    <p class="text-gray-700 text-lg italic mb-8">"The faculty is more than just teachers; they are mentors who truly care about our growth as individuals and leaders."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full"></div>
+                        <div>
+                            <h6 class="font-bold">Farai G.</h6>
+                            <p class="text-xs text-gray-500 uppercase font-bold">Head Boy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gray-50 rounded-[3rem] overflow-hidden shadow-xl grid md:grid-cols-2">
+                <div class="p-12 md:p-20 bg-schoolBlack text-white">
+                    <h2 class="text-4xl font-display font-extrabold mb-8">Get in Touch</h2>
+                    <p class="text-gray-400 mb-12">Have questions or want to schedule a visit? Reach out to our admissions office today.</p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-6">
+                            <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center shrink-0">
+                                <svg class="w-6 h-6 text-schoolYellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm uppercase font-bold tracking-widest mb-1">Phone</p>
+                                <p class="text-xl font-bold">O773965691</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-6">
+                            <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center shrink-0">
+                                <svg class="w-6 h-6 text-schoolGreen" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm uppercase font-bold tracking-widest mb-1">Email</p>
+                                <p class="text-xl font-bold break-all">info@ariseandshinecollege.ac.zw</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-6">
+                            <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center shrink-0">
+                                <svg class="w-6 h-6 text-schoolRed" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm uppercase font-bold tracking-widest mb-1">Location</p>
+                                <p class="text-xl font-bold">Harare, Zimbabwe</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-16 flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-schoolRed transition-colors">FB</a>
+                        <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-schoolRed transition-colors">TW</a>
+                        <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-schoolRed transition-colors">IG</a>
+                    </div>
+                </div>
+
+                <div class="p-12 md:p-20 flex flex-col justify-center">
+                    <form class="space-y-6">
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold uppercase tracking-wider text-gray-500">First Name</label>
+                                <input type="text" class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-schoolRed/20 focus:border-schoolRed" placeholder="John">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold uppercase tracking-wider text-gray-500">Last Name</label>
+                                <input type="text" class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-schoolRed/20 focus:border-schoolRed" placeholder="Doe">
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-wider text-gray-500">Email Address</label>
+                            <input type="email" class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-schoolRed/20 focus:border-schoolRed" placeholder="john@example.com">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-wider text-gray-500">Message</label>
+                            <textarea rows="4" class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-schoolRed/20 focus:border-schoolRed" placeholder="How can we help?"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-schoolRed text-white rounded-xl font-bold text-lg hover:bg-schoolBlack transition-all shadow-xl shadow-schoolRed/20">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer-like Bottom Info -->
+    <div class="bg-schoolBlack py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-3">
+                 <div class="w-10 h-10 rounded-lg overflow-hidden border border-white/20">
+                    <img src='https://opal.google/board/blobs/320e5adb-73d6-4e37-b8d8-7639bedb94ca' alt='Footer Logo' class="w-full h-full object-cover" />
+                </div>
+                <p class="text-white/50 text-sm font-medium tracking-tight uppercase">Arise and Shine International College <br/> <span class="text-[10px] tracking-widest text-schoolYellow">ARISE WITH KNOWLEDGE , SHINE WITH EXCELLENCE</span></p>
+            </div>
+            <div class="flex gap-8 text-white/40 text-sm font-bold">
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#academics" class="hover:text-white transition-colors">Academics</a>
+                <a href="#activities" class="hover:text-white transition-colors">Activities</a>
+                <a href="#contact" class="hover:text-white transition-colors">Admissions</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
